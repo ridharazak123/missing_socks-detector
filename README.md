@@ -1,4 +1,7 @@
 #  missing-socks-detector
+team name lost minds
+team leader ridha fathima 
+team member sumana 
 Missing Socks Detector is a funny, useless AI-powered web app that pretends to find your missing socks. Upload a sock, survive a chaotic 30-second sock-catching game, and discover that the AI still found absolutely nothing
 🧦 Missing Socks Detector
 
