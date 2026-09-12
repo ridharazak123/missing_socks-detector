@@ -1,0 +1,342 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>MISSING SOCK LOCATOR 🧦 — The Lost Laundry Archive</title>
+    <meta name="description"
+        content="A Pinterest-inspired lifestyle scrapbook and luxury investigation lab for your mysteriously lost laundry socks.">
+
+    <!-- Google Fonts: Playfair Display (Editorial Serif), Caveat (Handwritten Scrapbook), DM Sans (Clean Body) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;600;700&family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,700;1,9..40,400&family=Playfair+Display:ital,wght@0,500;0,700;0,900;1,400;1,600;1,700&display=swap"
+        rel="stylesheet">
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Floating Aesthetic Paper Stickers -->
+    <div class="floating-decor s1" aria-hidden="true">♡</div>
+    <div class="floating-decor s2" aria-hidden="true">✦</div>
+    <div class="floating-decor s3" aria-hidden="true">✧</div>
+    <div class="floating-decor s4" aria-hidden="true">🧦</div>
+    <div class="floating-decor s5" aria-hidden="true">~</div>
+    <div class="floating-decor s6" aria-hidden="true">♡</div>
+    <div class="floating-decor s7" aria-hidden="true">✦</div>
+    <div class="floating-decor s8" aria-hidden="true">•</div>
+
+    <!-- Floating Audio Control (Cute Stationery Pill) -->
+    <button id="audio-toggle" class="audio-pill-btn" aria-label="Toggle Sound Effects">
+        <span id="audio-icon">♫</span>
+        <span id="audio-label">SOUND ON</span>
+    </button>
+
+    <!-- Smooth Curtain Page Transition Overlay -->
+    <div id="curtain-transition" class="curtain-transition">
+        <div class="curtain-center-box">
+            <span class="curtain-sock-icon">🧦</span>
+            <p id="curtain-message" class="curtain-message">entering sock intelligence...</p>
+        </div>
+    </div>
+
+    <!-- ===================================================================
+         PAGE 01: PINTEREST HERO EDITORIAL POSTER
+         =================================================================== -->
+    <section id="screen-intro" class="screen active">
+        <div class="hero-editorial-container">
+            <!-- Left Editorial Text Column -->
+            <div class="hero-left-column">
+                <div class="scrapbook-tag">
+                    <span class="washi-tape-mini"></span>
+                    <span class="handwritten-label">"THE LOST LAUNDRY ARCHIVE"</span>
+                </div>
+
+                <h1 class="hero-editorial-title">
+                    <span class="title-line">MISSING</span>
+                    <span class="title-line">SOCK</span>
+                    <span class="title-line accent-title">LOCATOR</span>
+                </h1>
+
+                <p class="hero-editorial-subtitle">
+                    Because apparently finding one sock is now an advanced technological problem.
+                </p>
+
+                <div class="hero-action-row">
+                    <button id="btn-to-scanner" class="btn-luxury-pill">
+                        <span>FIND MY SOCK</span>
+                        <span class="pill-arrow">→</span>
+                    </button>
+                    <span class="hero-stamp-note">edition no. 01 / archives</span>
+                </div>
+            </div>
+
+            <!-- Right Polaroid / Scrapbook Media Column -->
+            <div class="hero-right-column">
+                <div class="polaroid-outer-frame" id="hero-polaroid">
+                    <!-- Top Corner Pink Washi Tape -->
+                    <div class="washi-tape-strip top-tape"></div>
+                    <div class="washi-tape-strip corner-tape"></div>
+
+                    <!-- Handwritten Annotation Notes Around Photo -->
+                    <span class="polaroid-handwritten hw-top">evidence #001</span>
+                    <span class="polaroid-handwritten hw-side">"highly suspicious"</span>
+                    <span class="polaroid-handwritten hw-bottom">sock season ✦</span>
+
+                    <div class="polaroid-photo-wrap">
+                        <img src="assets/interface.png" alt="Your Socks in My Hand Illustrated Art" id="hero-img"
+                            onerror="this.src='assets/interface.jpeg'">
+                    </div>
+
+                    <div class="polaroid-caption-area">
+                        <span class="caption-handwriting">"Have you seen this rogue fabric?"</span>
+                        <span class="caption-date">AUG 24 • CONFIDENTIAL</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         PAGE 02: SOCK SCANNER & SCRAPBOOK UPLOADER
+         =================================================================== -->
+    <section id="screen-scanner" class="screen">
+        <div class="scanner-page-container">
+            <!-- Top Editorial Header -->
+            <div class="scanner-top-header">
+                <div class="tiny-editorial-pill">SOCK INTELLIGENCE LAB / 001</div>
+                <h1 class="scanner-main-title">
+                    <span>MISSING SOCK</span>
+                    <span class="title-sub">LOCATOR</span>
+                </h1>
+                <p class="scanner-subtext">Upload the sock you still have.</p>
+            </div>
+
+            <!-- Large Scrapbook-Style Upload Card (Paper on Pink Vanity) -->
+            <div class="scrapbook-paper-card" id="sock-dropzone">
+                <div class="washi-tape-strip card-top-tape"></div>
+                <div class="paper-clip-badge">📎</div>
+
+                <!-- Idle State -->
+                <div id="dropzone-idle" class="dropzone-idle-content">
+                    <div class="idle-sock-icon">🧦</div>
+                    <h2 class="dropzone-heading">DROP YOUR SOCK HERE</h2>
+                    <p class="dropzone-sub">or choose a photo from your device</p>
+
+                    <button type="button" class="btn-creamy-secondary" id="btn-browse-trigger">
+                        CHOOSE SOCK PHOTO
+                    </button>
+
+                    <span class="dropzone-format-tag">JPG / PNG / WEBP</span>
+                </div>
+
+                <!-- Active Polaroid Preview State -->
+                <div id="dropzone-preview" class="dropzone-preview-content">
+                    <div class="preview-polaroid-frame">
+                        <div class="washi-tape-mini preview-tape"></div>
+                        <div class="preview-img-box">
+                            <img id="preview-img" alt="Uploaded Sock Preview">
+                        </div>
+                        <div class="preview-info-strip">
+                            <span class="subject-title">SUBJECT IDENTIFIED</span>
+                            <span class="subject-verified">✓ SOCK</span>
+                        </div>
+                    </div>
+                    <button type="button" id="btn-change-photo" class="text-link-button">Change photo</button>
+                </div>
+
+                <input type="file" id="sock-file-input" class="hidden-file-input"
+                    accept="image/jpeg,image/png,image/webp">
+            </div>
+
+            <!-- Scanner Actions -->
+            <div class="scanner-bottom-actions">
+                <button id="btn-start-analysis" class="btn-luxury-pill large-investigate" disabled>
+                    <span>BEGIN INVESTIGATION</span>
+                    <span class="pill-arrow">→</span>
+                </button>
+
+                <button type="button" id="btn-sample-sock" class="sample-sock-shortcut">
+                    ✨ Live Demo Shortcut: Use sample sock photo
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         PAGE 03: FAKE LUXURY AI RESEARCH LAB (99% DRAMATIC STOP)
+         =================================================================== -->
+    <section id="screen-analyzing" class="screen">
+        <div class="luxury-lab-card">
+            <div class="washi-tape-strip lab-top-tape"></div>
+
+            <div class="lab-badge-row">
+                <span class="tiny-editorial-pill">LUXURY SPECIMEN AUDIT</span>
+                <span class="lab-serial">REF: #LOST-882</span>
+            </div>
+
+            <h2 class="lab-title">SOCK ANALYSIS</h2>
+
+            <!-- Elegant Aesthetic Circular Progress / Radar -->
+            <div class="lab-visual-center">
+                <div class="aesthetic-halo halo-1"></div>
+                <div class="aesthetic-halo halo-2"></div>
+                <div class="lab-sock-specimen" id="lab-sock-icon">🧦</div>
+            </div>
+
+            <!-- Big Dramatic Percentage Number -->
+            <div class="lab-progress-number-wrap">
+                <span id="lab-progress-digits" class="lab-big-percent">0%</span>
+            </div>
+
+            <!-- Animated Luxury Status Messages -->
+            <div id="lab-message-ticker" class="lab-message-ticker">
+                Studying sock personality...
+            </div>
+
+            <!-- Subtle Progress Line -->
+            <div class="lab-progress-line-track">
+                <div id="lab-progress-line-fill" class="lab-progress-line-fill"></div>
+            </div>
+
+            <!-- 99% Dramatic Callouts (Initially Hidden) -->
+            <div id="dramatic-99-box" class="dramatic-99-callout">
+                <div class="callout-suspicion">confidence: suspiciously high</div>
+                <div class="callout-warning">the subject appears to be moving.</div>
+                <div id="callout-status-text" class="callout-status-text">SOCK FOUND.</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         PAGE 04: PURE BLACK CINEMATIC SCREEN
+         =================================================================== -->
+    <section id="screen-blackout" class="screen">
+        <div class="cinematic-black-stage">
+            <h1 id="blackout-line-1" class="blackout-line">LOCATION CONFIRMED.</h1>
+            <h2 id="blackout-line-2" class="blackout-line whisper">...probably.</h2>
+            <h1 id="blackout-line-3" class="blackout-line shout">RUN.</h1>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         PAGE 05: THE SOCK HUNT GAME (CHAOTIC CUTE BEDROOM FLOOR)
+         =================================================================== -->
+    <section id="screen-game" class="screen">
+        <!-- Top Editorial HUD -->
+        <div class="game-editorial-hud">
+            <div class="game-hud-left">
+                <span class="hud-game-title">SOCK HUNT</span>
+                <span class="hud-game-sub">physical retrieval mode</span>
+            </div>
+
+            <div id="game-timer-pill" class="hud-timer-pill">
+                <span class="timer-tag-label">TIME LEFT</span>
+                <span id="timer-digits" class="timer-digits">00:30</span>
+            </div>
+        </div>
+
+        <!-- Funny Comedy Event Toast Banner -->
+        <div id="game-event-banner" class="game-event-toast">
+            SOCK FOUND ✓
+        </div>
+
+        <!-- Bottom Background Radio & Tactical Comms Dispatch -->
+        <div id="sock-radio-dispatch" class="sock-radio-dispatch">
+            <div class="radio-status-pill">
+                <span class="radio-live-dot"></span>
+                <span class="radio-channel-tag">LAUNDRY COMMS 98.4 FM</span>
+            </div>
+            <div id="radio-dialogue-text" class="radio-dialogue-text">
+                Intercepting sock frequency...
+            </div>
+        </div>
+
+        <!-- Arena for Falling Sock Rain and comic dialogue bubbles -->
+        <div id="socks-arena" class="socks-play-arena"></div>
+
+        <!-- Illustrated Grabbing Hand Cursor with Thought Bubble -->
+        <div id="custom-hand" class="illustrated-hand-cursor">
+            <span class="hand-icon-display">🖐️</span>
+            <div id="hand-bubble" class="hand-thought-bubble">I GOT IT!</div>
+        </div>
+    </section>
+
+    <!-- ===================================================================
+         PAGE 06: FINAL FASHION MAGAZINE RESULT (MALAYALAM PUNCHLINE)
+         =================================================================== -->
+    <section id="screen-result" class="screen">
+        <div class="result-backdrop-overlay">
+            <div class="result-editorial-card">
+                <div class="washi-tape-strip result-card-tape"></div>
+
+                <div class="result-top-badge">
+                    <span>SOCK INVESTIGATION / FINAL REPORT</span>
+                </div>
+
+                <!-- Exact Malayalam Punchline -->
+                <h1 class="malayalam-punchline">
+                    <span>thekkoott</span>
+                    <span>nokki</span>
+                    <span class="punchline-accent">ninnoo 🥱😂</span>
+                </h1>
+
+                <div class="result-narrative">
+                    <p class="narrative-main">Your missing sock was successfully located.</p>
+                    <p class="narrative-sub">Unfortunately, it escaped.</p>
+                </div>
+
+                <!-- Reaction Sticker with Washi Tape & Caption -->
+                <div class="result-sticker-stage">
+                    <div class="sticker-polaroid-frame">
+                        <div class="washi-tape-mini sticker-tape"></div>
+                        <img src="assets/sticker.png" alt="Reaction Sticker" class="result-sticker-img">
+                        <span class="sticker-caption">"case closed."</span>
+                    </div>
+                </div>
+
+                <!-- Telemetry Dossier Grid -->
+                <div class="result-dossier-grid">
+                    <div class="dossier-row">
+                        <span class="dossier-label">SOCK STATUS</span>
+                        <span class="dossier-val accent-val">TELEPORTED</span>
+                    </div>
+                    <div class="dossier-row">
+                        <span class="dossier-label">LOCATION</span>
+                        <span class="dossier-val">UNKNOWN</span>
+                    </div>
+                    <div class="dossier-row">
+                        <span class="dossier-label">AI CONFIDENCE</span>
+                        <span class="dossier-val">99.9%</span>
+                    </div>
+                    <div class="dossier-row">
+                        <span class="dossier-label">ACTUAL SOCKS FOUND</span>
+                        <span class="dossier-val zero-val">0</span>
+                    </div>
+                </div>
+
+                <!-- Action Buttons -->
+                <div class="result-action-stack">
+                    <button id="btn-try-again" class="btn-luxury-pill result-try-btn">
+                        <span>TRY AGAIN ↻</span>
+                    </button>
+                    <span class="result-sub-note">"maybe this time."</span>
+
+                    <button id="btn-scan-another" class="text-link-button" style="margin-top: 8px;">
+                        SCAN ANOTHER SOCK 📸
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Audio Engine & Game Controller -->
+    <script src="audio.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
